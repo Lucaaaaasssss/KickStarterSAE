@@ -1,47 +1,25 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <section class="card">
+    <h1 class="names">
+      <span class="name">Lucas Lebecq </span>
+      <span class="and">& </span>
+      <span class="name">Mathias Packo</span>
+    </h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div
+        class="progress"
+        role="progressbar"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-label="Chargement"
+    >
+      <div class="progress__bar" style="width: 0%"></div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <p class="hint">0%</p>
+  </section>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
