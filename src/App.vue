@@ -1,25 +1,23 @@
 <template>
-  <section class="card">
-    <h1 class="names">
-      <span class="name">Lucas Lebecq </span>
-      <span class="and">& </span>
-      <span class="name">Mathias Packo</span>
-    </h1>
+  <main class="wrap">
+    <h1>Status du projet</h1>
 
-    <div
-        class="progress"
-        role="progressbar"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-label="Chargement"
-    >
-      <div class="progress__bar" style="width: 0%"></div>
-    </div>
-    <p class="hint">0%</p>
-  </section>
+    <section class="card">
+      <p>{{ myName }}</p>
+      <p>{{ colleagueFirstName }}</p>
+
+      <div class="progress">
+        <div class="progress__bar" :style="{ width: progress + '%' }"></div>
+      </div>
+      <p class="progress__text">{{ progress }}%</p>
+    </section>
+  </main>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 
+const myName = ref('Lucas Lebecq')         // ➜ Ton nom
+const colleagueFirstName = ref('Mathias Packo')     // ➜ Prénom du collègue
+const progress = ref(0)                    // ➜ 0% pour le moment
 </script>
