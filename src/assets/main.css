@@ -1,57 +1,92 @@
-:root {
-    --bg: #0f172a;       /* ardoise foncée */
-    --fg: #e2e8f0;       /* ardoise claire */
-    --card: #111827;     /* gris très foncé */
-    --accent: #22c55e;   /* vert */
+body {
+    margin: 0;
+    background: #0f172a;  /* ton bleu choisi */
+    color: #ffffff;       /* texte blanc pour le contraste */
+    font-family: system-ui, sans-serif;
 }
 
-* { box-sizing: border-box; }
-html, body, #app { height: 100%; margin: 0; }
+.site-header {     /* occupe toute la hauteur de la page */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* aligne le contenu en haut */
+    align-items: center;          /* centre horizontalement */
+    text-align: center;
+}
 
-.wrap {
-    min-height: 100%;
+/* --- Section sous le header --- */
+.section {
+    padding: 40px 20px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Grille 2/3 - 1/3 */
+.grid-2-1 {
     display: grid;
-    place-items: center;
-    background: radial-gradient(1200px 800px at 20% 10%, #1f2937, var(--bg));
-    color: var(--fg);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    padding: 24px;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
-h1 {
-    margin: 0 0 16px 0;
-    font-size: 28px;
-    letter-spacing: .3px;
+/* Image pleine hauteur de sa cellule */
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
 }
 
-.card {
-    width: min(640px, 90vw);
-    background: var(--card);
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+/* Petit rectangle (carte) à droite */
+.panel {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 16px;
 }
 
-p { margin: 8px 0; font-size: 16px; }
+/* Titres/copies dans le panel */
+.panel h2 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+}
+.panel p {
+    margin: 0 0 12px 0;
+    opacity: 0.9;
+    font-size: .95rem;
+}
 
+/* Barres de progression */
 .progress {
-    margin-top: 16px;
-    background: #0b1220;
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 999px;
-    height: 14px;
     overflow: hidden;
-    outline: 1px solid rgba(255,255,255,.06);
+    margin: 6px 0 10px;
 }
-
 .progress__bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, var(--accent), #16a34a);
+    background: #60a5fa;           /* bleu clair lisible sur #0f172a */
     transition: width .3s ease;
 }
+.progress__label {
+    margin: 2px 0 10px;
+    font-size: .9rem;
+    opacity: .85;
+    display: flex;
+    justify-content: space-between;
+}
 
-.progress__text {
-    margin-top: 6px;
-    font-variant-numeric: tabular-nums;
-    opacity: .9;
+/* Responsive : empilement sur mobile */
+@media (max-width: 900px) {
+    .grid-2-1 {
+        grid-template-columns: 1fr;
+    }
+    .showcase-img {
+        height: 260px;
+    }
 }
