@@ -12,7 +12,7 @@
       </div>
 
       <!-- Panel 2 : Équipe -->
-      <div class="panel" style="margin-top: 16px;">
+      <div class="panel" style="margin-top: 30px;">
         <h2 style="margin: 0 0 12px 0;">Équipe</h2>
 
         <!-- grille 2 colonnes, 1 colonne sur mobile -->
@@ -36,7 +36,7 @@
               background: rgba(255,255,255,0.04);
             "
           >
-            <!-- Avatar initiales -->
+
             <div
                 style="
                 width: 44px;
@@ -65,11 +65,6 @@
             </div>
           </div>
         </div>
-
-        <!-- petite note -->
-        <p style="margin: 12px 0 0 0; opacity: .75; font-size: .9rem;">
-          Une équipe compacte et efficace pour livrer un gameplay fun et soigné.
-        </p>
       </div>
     </div>
   </section>
@@ -80,8 +75,8 @@ import { ref } from 'vue'
 
 // 2 membres de l'équipe (tu peux ajuster les rôles si besoin)
 const team = ref([
-  { name: 'Lucas Lebecq', role: 'Développeur / Intégration' },
-  { name: 'Mathias Packo', role: 'Game design / Développement' }
+  { name: 'Lucas Lebecq', role: 'Développeur' },
+  { name: 'Mathias Packo', role: 'Développeur' }
 ])
 
 // Initiales à partir du nom

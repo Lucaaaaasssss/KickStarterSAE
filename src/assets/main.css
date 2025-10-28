@@ -15,7 +15,7 @@ body {
 
 /* --- Section sous le header --- */
 .section {
-    padding: 40px 20px 20px;
+    padding: 10px 20px 20px;
 }
 
 .container {
@@ -49,7 +49,7 @@ body {
 
 /* Titres/copies dans le panel */
 .panel h2 {
-    margin: 0 0 6px 0;
+    margin: 0 0 20px 0;
     font-size: 1.1rem;
 }
 .panel p {

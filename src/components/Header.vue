@@ -10,6 +10,6 @@
 <script setup>
 import { ref } from 'vue'
 
-const title = ref('Mon superbe header')
-const subtitle = ref('Un texte juste en dessous pour expliquer la proposition de valeur en une ou deux lignes.')
+const title = ref('???')
+const subtitle = ref('Pitch')
 </script>
