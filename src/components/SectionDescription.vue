@@ -5,7 +5,7 @@
       <div class="panel">
         <h2 style="margin: 0 0 8px 0;">Description du jeu</h2>
         <p style="margin: 0;">
-          RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux cobayes tentant de s’évader d’un laboratoire sécurisé.
+          RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux cobayes tentant de s’évader d’un laboratoire sécurisé le plus rapidement possible ! Le tout sans se faire repérer.
           Le concept central repose sur deux couloirs parallèles : avancer dans l’un permet de débloquer l’autre.<br></br><br></br>
 
           Le jeu propose deux façons de jouer :<br></br><br></br>
@@ -201,8 +201,8 @@ const planning = ref([
   },
   {
     period: 'Nov-Déc 2025',
-    title: 'Dévellopement du jeu',
-    desc: 'Dévellopement du jeu sur Unity, intégration, test...',
+    title: 'Développement du jeu',
+    desc: 'Développement du jeu sur Unity, intégration, test...',
     status: 'en cours'
   },
    {
