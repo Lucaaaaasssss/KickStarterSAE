@@ -10,6 +10,6 @@
 <script setup>
 import { ref } from 'vue'
 
-const title = ref('???')
+const title = ref('RunAway')
 const subtitle = ref('Pitch')
 </script>

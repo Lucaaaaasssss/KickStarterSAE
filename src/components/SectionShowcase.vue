@@ -3,10 +3,10 @@
     <div class="container grid-2-1">
       <!-- 2/3 : image -->
       <img
-          class="showcase-img"
-          src="https://picsum.photos/1200/800"
-          alt="Illustration du projet"
-      />
+  class="showcase-img"
+  src="../assets/jeugameplay1.png"
+  alt="Gameplay du jeu"
+/>
 
       <!-- 1/3 : petit rectangle avec 2 barres -->
       <div class="panel">
