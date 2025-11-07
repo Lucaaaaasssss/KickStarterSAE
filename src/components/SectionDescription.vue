@@ -110,6 +110,27 @@
 
               <article class="news-card">
                 <div class="news-date">07 nov. 2025</div>
+                <h3 class="news-title">Assets d'un autre personnage</h3>
+                <p class="news-text">
+                  Le personnage jouable est disponible en pixel-art 32x32, prêt à être intégré sur Unity.
+                </p>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Policier patrouilleur</h4>
+                  <div class="assets-row">
+                    <img src="../assets/cobaye2_front_1.png" alt="Cobaye face 1" />
+                    <img src="../assets/cobaye2_front_2.png" alt="Cobaye face 2" />
+                    <img src="../assets/cobaye2_back_1.png" alt="Cobaye dos 1" />
+                    <img src="../assets/cobaye2_back_2.png" alt="Cobaye dos 2" />
+                    <img src="../assets/cobaye2_side_1.png" alt="Cobaye côté 1" />
+                    <img src="../assets/cobaye2_side_2.png" alt="Cobaye côté 2" />
+                  </div>
+                </div>
+
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">07 nov. 2025</div>
                 <h3 class="news-title">Première démonstration vidéo du prototype</h3>
                 <p class="news-text">
                   La première vidéo de test est disponible ! Le but était de tester les déplacements du personnage.
