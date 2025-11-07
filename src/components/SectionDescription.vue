@@ -1,303 +1,430 @@
 <template>
   <section class="section">
     <div class="container">
-      <!-- Panel 1 : Description -->
-      <div class="panel">
-        <h2 style="margin: 0 0 8px 0;">Description du jeu</h2>
-        <p style="margin: 0;">
-          RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux cobayes tentant de s’évader d’un laboratoire sécurisé le plus rapidement possible ! Le tout sans se faire repérer.
-          Le concept central repose sur deux couloirs parallèles : avancer dans l’un permet de débloquer l’autre.<br></br><br></br>
-
-          Le jeu propose deux façons de jouer :<br></br><br></br>
-
-          Solo : le joueur contrôle les deux personnages et peut alterner à tout moment entre eux afin de progresser.<br></br>
-
-          Duo : chaque joueur contrôle un personnage, nécessitant une coordination constante.<br></br><br></br>
-
-          Le laboratoire est équipé de systèmes de sécurité variés : caméras, gardes, robots patrouilleurs, etc.
-          La détection entraîne un redémarrage immédiat, encourageant l’apprentissage et l’amélioration du parcours.<br></br>
-
-          La visibilité est volontairement réduite à une petite zone autour du personnage. Une lampe permet d’augmenter le champ de vision mais dispose d’une batterie limitée, ajoutant une gestion de ressources à la progression.<br></br><br></br>
-
-          Le niveau comporte plusieurs itinéraires, dont certains cachés, offrant une réelle rejouabilité ainsi qu’un potentiel d’optimisation du temps.<br></br>
-          Le chronomètre constitue la base du scoring.
-        </p>
+      <!-- PANEL 1 -->
+      <div class="panel-item">
+        <header class="panel-header" @click="toggle(1)">
+          <h2>Description du jeu</h2>
+          <span class="arrow" :class="{ open: openPanel === 1 }">▼</span>
+        </header>
+        <transition name="slide">
+          <div v-show="openPanel === 1" class="panel-content">
+            <p>
+              RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux cobayes tentant de s’évader d’un laboratoire sécurisé le plus rapidement possible !
+              Le concept central repose sur deux couloirs parallèles : avancer dans l’un permet de débloquer l’autre.<br /><br />
+              Le jeu propose deux façons de jouer :<br /><br />
+              <b>Solo :</b> le joueur contrôle les deux personnages et peut alterner à tout moment entre eux afin de progresser.<br />
+              <b>Duo :</b> chaque joueur contrôle un personnage, nécessitant une coordination constante.<br /><br />
+              Le laboratoire est équipé de systèmes de sécurité variés : caméras, gardes, robots patrouilleurs, etc.
+              La détection entraîne un redémarrage immédiat, encourageant l’apprentissage et l’amélioration du parcours.<br /><br />
+              La visibilité est volontairement réduite à une petite zone autour du personnage. Une lampe permet d’augmenter le champ de vision mais dispose d’une batterie limitée.<br /><br />
+              Le niveau comporte plusieurs itinéraires, dont certains cachés, offrant une rejouabilité et un potentiel d’optimisation du temps.
+            </p>
+          </div>
+        </transition>
       </div>
 
-      <!-- Panel 2 : Équipe -->
-      <div class="panel" style="margin-top: 30px;">
-        <h2 style="margin: 0 0 12px 0;">Équipe</h2>
-
-        <!-- grille 2 colonnes, 1 colonne sur mobile -->
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
-          "
-        >
-          <div
-            v-for="member in team"
-            :key="member.name"
-            style="
-              display: flex;
-              gap: 12px;
-              align-items: center;
-              padding: 12px;
-              border: 1px solid rgba(255,255,255,0.15);
-              border-radius: 12px;
-              background: rgba(255,255,255,0.04);
-            "
-          >
-            <div
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 999px;
-                display: grid;
-                place-items: center;
-                font-weight: 700;
-                background: rgba(255,255,255,0.10);
-                border: 1px solid rgba(255,255,255,0.18);
-                flex: 0 0 auto;
-              "
-              :aria-label="`Avatar de ${member.name}`"
-            >
-              {{ initials(member.name) }}
+      <!-- PANEL 2 - ÉQUIPE -->
+      <div class="panel-item">
+        <header class="panel-header" @click="toggle(2)">
+          <h2>Équipe</h2>
+          <span class="arrow" :class="{ open: openPanel === 2 }">▼</span>
+        </header>
+        <transition name="slide">
+          <div v-show="openPanel === 2" class="panel-content team">
+            <div class="team-member">
+              <div class="avatar">
+                <img src="../assets/lucas.jpg" alt="Lucas Lebecq" />
+              </div>
+              <div class="member-info">
+                <div class="name">Lucas Lebecq</div>
+                <div class="role">Développeur</div>
+              </div>
             </div>
 
-            <!-- Infos -->
-            <div style="min-width: 0;">
-              <div style="font-weight: 700; line-height: 1.2;">
-                {{ member.name }}
+            <div class="team-member">
+              <div class="avatar">
+                <img src="../assets/mathias.jpg" alt="Mathias Packo" />
               </div>
-              <div style="opacity: .85; font-size: .95rem;">
-                {{ member.role }}
+              <div class="member-info">
+                <div class="name">Mathias Packo</div>
+                <div class="role">Développeur</div>
               </div>
             </div>
           </div>
-        </div>
+        </transition>
       </div>
 
-      <!-- Panel 3 : Planning -->
-      <div class="panel" style="margin-top: 30px;">
-        <h2 style="margin: 0 0 12px 0;">Planning</h2>
+      <!-- PANEL 3 - PLANNING (TIMELINE) -->
+      <div class="panel-item">
+        <header class="panel-header" @click="toggle(3)">
+          <h2>Planning</h2>
+          <span class="arrow" :class="{ open: openPanel === 3 }">▼</span>
+        </header>
+        <transition name="slide">
+          <div v-show="openPanel === 3" class="panel-content">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">Nov–Déc 2025</div>
+                  <div class="timeline-title">Kickstarter</div>
+                  <div class="timeline-desc">Page Kickstarter, trailer, collecte des premiers retours.</div>
+                  <div class="timeline-tag">En cours</div>
+                </div>
+              </div>
 
-        <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
-          <div
-            v-for="step in planning"
-            :key="step.title"
-            style="
-              display: grid;
-              grid-template-columns: 140px 1fr auto;
-              gap: 12px;
-              align-items: center;
-              padding: 12px;
-              border: 1px solid rgba(255,255,255,0.15);
-              border-radius: 12px;
-              background: rgba(255,255,255,0.04);
-            "
-          >
-            <div style="opacity: .9; font-weight: 600; white-space: nowrap;">{{ step.period }}</div>
-            <div style="min-width: 0;">
-              <div style="font-weight: 700; line-height: 1.2;">{{ step.title }}</div>
-              <div style="opacity: .85; font-size: .95rem;">{{ step.desc }}</div>
-            </div>
-            <div
-              :title="`Statut: ${step.status}`"
-              style="
-                padding: 6px 10px;
-                border-radius: 999px;
-                border: 1px solid rgba(255,255,255,0.18);
-                background: rgba(255,255,255,0.08);
-                font-size: .85rem;
-                font-weight: 700;
-                white-space: nowrap;
-              "
-            >
-              {{ step.status }}
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">Nov–Déc 2025</div>
+                  <div class="timeline-title">Développement du jeu</div>
+                  <div class="timeline-desc">Développement sur Unity, intégration, tests et itérations.</div>
+                  <div class="timeline-tag">En cours</div>
+                </div>
+              </div>
 
-      <!-- Panel 4 : Dernières actualités -->
-      <div class="panel" style="margin-top: 30px;">
-        <h2 style="margin: 0 0 12px 0;">Dernières actualités</h2>
-
-        <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
-          <article
-            v-for="news in sortedUpdates"
-            :key="news.id"
-            style="
-              padding: 12px;
-              border: 1px solid rgba(255,255,255,0.15);
-              border-radius: 12px;
-              background: rgba(255,255,255,0.04);
-            "
-          >
-            <header style="display: flex; align-items: baseline; gap: 10px;">
-              <time :datetime="news.date" style="opacity: .8; font-weight: 600; white-space: nowrap;">{{ formatDate(news.date) }}</time>
-              <h3 style="margin: 0; font-size: 1rem; line-height: 1.2;">{{ news.title }}</h3>
-            </header>
-
-            <p style="margin: 6px 0 0 0; opacity:.95;">{{ news.body }}</p>
-
-            <!-- ====== Images d'assets sous le body ====== -->
-            <div v-if="news.assets" class="assets">
-              <div
-                v-for="group in news.assets"
-                :key="group.label"
-                class="assets__group"
-              >
-                <h4 class="assets__title">{{ group.label }}</h4>
-                <div class="assets__row">
-                  <img
-                    v-for="file in group.files"
-                    :key="file"
-                    :src="file"
-                    class="assets__img"
-                    alt=""
-                  />
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">Nov 2025</div>
+                  <div class="timeline-title">Création des assets</div>
+                  <div class="timeline-desc">Production des sprites, animations et éléments visuels clés.</div>
+                  <div class="timeline-tag">En cours</div>
                 </div>
               </div>
             </div>
-            <!-- ========================================== -->
-          </article>
-        </div>
+          </div>
+        </transition>
+      </div>
+
+      <!-- PANEL 4 - DERNIÈRES ACTUALITÉS (CARDS) -->
+      <div class="panel-item">
+        <header class="panel-header" @click="toggle(4)">
+          <h2>Dernières actualités</h2>
+          <span class="arrow" :class="{ open: openPanel === 4 }">▼</span>
+        </header>
+        <transition name="slide">
+          <div v-show="openPanel === 4" class="panel-content">
+            <div class="news-list">
+
+              <article class="news-card">
+                <div class="news-date">07 nov. 2025</div>
+                <h3 class="news-title">Première démonstration vidéo du prototype</h3>
+                <p class="news-text">
+                  La première vidéo de test est disponible ! Le but était de tester les déplacements du personnage.
+                </p>
+                <div class="asset-video">
+                  <video :src="videoTest" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                </div>
+              </article>
+
+
+              <article class="news-card">
+                <div class="news-date">06 nov. 2025</div>
+                <h3 class="news-title">Premiers assets de personnages</h3>
+                <p class="news-text">
+                  Les personnages jouables et les policiers patrouilleurs sont disponibles en pixel-art 32x32, prêts à être intégrés au prototype.
+                </p>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Policier patrouilleur</h4>
+                  <div class="assets-row">
+                    <img src="../assets/policier_front_1.png" alt="Policier face 1" />
+                    <img src="../assets/policier_front_2.png" alt="Policier face 2" />
+                    <img src="../assets/policier_back_1.png" alt="Policier dos 1" />
+                    <img src="../assets/policier_back_2.png" alt="Policier dos 2" />
+                    <img src="../assets/policier_side_1.png" alt="Policier côté 1" />
+                    <img src="../assets/policier_side_2.png" alt="Policier côté 2" />
+                  </div>
+                </div>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Cobaye 1</h4>
+                  <div class="assets-row">
+                    <img src="../assets/cobaye1_front_1.png" alt="Cobaye face 1" />
+                    <img src="../assets/cobaye1_front_2.png" alt="Cobaye face 2" />
+                    <img src="../assets/cobaye1_back_1.png" alt="Cobaye dos 1" />
+                    <img src="../assets/cobaye1_back_2.png" alt="Cobaye dos 2" />
+                    <img src="../assets/cobaye1_side_1.png" alt="Cobaye côté 1" />
+                    <img src="../assets/cobaye1_side_2.png" alt="Cobaye côté 2" />
+                  </div>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">06 oct. 2025</div>
+                <h3 class="news-title">Page de présentation prête</h3>
+                <p class="news-text">
+                  La page Kickstarter est maintenant créée : description, visuels, planning, actualités et objectifs sont posés.
+                </p>
+              </article>
+
+            </div>
+          </div>
+        </transition>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
+import videoTest from '../assets/videotest.mp4'
 
-const asset = (p) => new URL(p, import.meta.url).href
-
-
-// 2 membres de l'équipe (tu peux ajuster les rôles si besoin)
-const team = ref([
-  { name: 'Lucas Lebecq', role: 'Développeur' },
-  { name: 'Mathias Packo', role: 'Développeur' }
-])
-
-// Initiales à partir du nom
-const initials = (name) =>
-  name
-    .split(/\s+/)
-    .map((n) => n[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase()
-
-// Planning (exemple typique d'une page Kickstarter)
-const planning = ref([
-  {
-    period: 'Nov–Déc 2025',
-    title: 'Kickstarter',
-    desc: 'Page Kickstarter, trailer, collecte des premiers retours.',
-    status: 'en cours'
-  },
-  {
-    period: 'Nov-Déc 2025',
-    title: 'Développement du jeu',
-    desc: 'Développement du jeu sur Unity, intégration, test...',
-    status: 'en cours'
-  },
-   {
-    period: 'Nov 2025',
-    title: 'Création des assets du jeu',
-    desc: 'Créer les différentes assets nécessaire pour le jeu',
-    status: 'en cours'
-  }
-])
-
-// Actualités (exemple)
-const updates = ref([
-  {
-    id: 1,
-    date: '2025-10-06',
-    title: 'Page de présentation prête',
-    body: "La page Kickstarter est maintenant crée : description, visuels, planning, actualité et objectifs sont posés."
-  },
-  {
-  id: 2,
-  date: '2025-11-06',
-  title: 'Premiers assets de personnages',
-  body:
-    "Les personnages jouables et les policiers patrouilleurs sont maintenant disponibles en pixel-art 32x32, comprenant 6 animations chacun (face, dos, côtés). Ces sprites seront prochainement intégrés au niveau prototype pour les premiers tests de déplacement et de détection.",
-  assets: [
-    {
-      label: 'Policier patrouilleur',
-      files: [
-        asset('../assets/pixel-art/policier_front_1.png'),
-        asset('../assets/pixel-art/policier_front_2.png'),
-        asset('../assets/pixel-art/policier_back_1.png'),
-        asset('../assets/pixel-art/policier_back_2.png'),
-        asset('../assets/pixel-art/policier_side_1.png'),
-        asset('../assets/pixel-art/policier_side_2.png')
-      ]
-    },
-    {
-      label: 'Cobaye 1',
-      files: [
-        asset('../assets/pixel-art/cobaye1_front_1.png'),
-        asset('../assets/pixel-art/cobaye1_front_2.png'),
-        asset('../assets/pixel-art/cobaye1_back_1.png'),
-        asset('../assets/pixel-art/cobaye1_back_2.png'),
-        asset('../assets/pixel-art/cobaye1_side_1.png'),
-        asset('../assets/pixel-art/cobaye1_side_2.png')
-      ]
-    }
-  ]
-}
-])
-// ✅ Tri des actualités : la plus récente en haut
-const sortedUpdates = computed(() =>
-  [...updates.value].sort((a, b) => new Date(b.date) - new Date(a.date))
-)
-
-// Formatage simple (AAAA-MM-JJ -> JJ MMM AAAA)
-const formatDate = (iso) => {
-  try {
-    const d = new Date(iso)
-    return d.toLocaleDateString('fr-FR', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
-    })
-  } catch (e) {
-    return iso
-  }
+const openPanel = ref(null)
+const toggle = (id) => {
+  openPanel.value = openPanel.value === id ? null : id
 }
 </script>
 
 <style scoped>
-.section { padding: 24px; }
-.container { /* max-width removed to restore original width */
-  margin: 0 auto; }
-.panel { }
+.panel-item {
+  margin: 20px 0;
+}
 
-/* ====== Styles assets ====== */
-.assets { margin-top: 10px; }
-.assets__group { margin-top: 12px; }
-.assets__title { margin: 0 0 8px 0; font-size: .95rem; opacity: .9; }
-.assets__row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.assets__img {
+/* Titre + flèche */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.panel-header h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 1.3rem;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Contenu */
+.panel-content {
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* Animation accordéon */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.25s ease;
+}
+.slide-enter-from,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.slide-enter-to,
+.slide-leave-from {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* === ÉQUIPE === */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+  flex: 0 0 120px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info .name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.member-info .role {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* === PLANNING (TIMELINE) === */
+.timeline {
+  position: relative;
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: #e0e0e0;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #111;
+  margin-right: 10px;
+  margin-left: -6px;
+  flex-shrink: 0;
+}
+
+.timeline-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline-period {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.timeline-tag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* === DERNIÈRES ACTUS (CARDS) === */
+.news-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.news-card {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  background: #fafafa;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+.news-title {
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.news-text {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.news-assets {
+  margin-top: 10px;
+}
+
+.assets-title {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0 0 6px 0;
+}
+
+.assets-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.assets-row img {
   width: 40px;
   height: 40px;
-  image-rendering: pixelated;
-  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 6px;
-  background: rgba(255,255,255,0.04);
+  border: 1px solid #d2d2d2;
+  background: #fff;
   padding: 4px;
+  image-rendering: pixelated;
 }
-/* =========================== */
 
-/* Responsive: 1 colonne pour la grille équipe/planning sur petit écran */
-@media (max-width: 640px) {
-  .panel [style*='grid-template-columns: repeat(2,'] { grid-template-columns: 1fr !important; }
-  .panel [style*='grid-template-columns: 140px 1fr auto'] { grid-template-columns: 1fr !important; }
+.asset-video {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;
+}
+
+.asset-video video {
+  width: 80%;          /* vidéo plus grande mais pas pleine largeur */
+  max-width: 700px;    /* limite sur les écrans larges */
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .panel-header h2 {
+    font-size: 1.4rem;
+  }
+  .team {
+    justify-content: center;
+  }
 }
 </style>

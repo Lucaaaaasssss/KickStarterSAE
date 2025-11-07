@@ -1,16 +1,30 @@
+/* ======== Thème clair ======== */
+
 body {
     margin: 0;
-    background: #0f172a;  /* ton bleu choisi */
-    color: #ffffff;       /* texte blanc pour le contraste */
-    font-family: system-ui, sans-serif;
+    background: #f8f9fb;          /* blanc très légèrement gris */
+    color: #111111;               /* texte noir/gris foncé pour la lisibilité */
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.site-header {     /* occupe toute la hauteur de la page */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Pixelify Sans", sans-serif;
+    color: #000;
+}
+
+/* Header centré */
+.site-header {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* aligne le contenu en haut */
-    align-items: center;          /* centre horizontalement */
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
+    background: #f8f9fb;          /* fond blanc pur pour le header */
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 20px;
+    margin-bottom: 3rem;
 }
 
 /* --- Section sous le header --- */
@@ -30,7 +44,7 @@ body {
     gap: 20px;
 }
 
-/* Image pleine hauteur de sa cellule */
+/* Image pleine hauteur */
 .showcase-img {
     width: 100%;
     height: 100%;
@@ -39,44 +53,45 @@ body {
     display: block;
 }
 
-/* Petit rectangle (carte) à droite */
+/* Cartes de contenu */
 .panel {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: #ffffff;                       /* fond blanc */
+    border: 1px solid #dcdcdc;                 /* bord léger gris */
     border-radius: 12px;
     padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);    /* ombre douce */
 }
 
-/* Titres/copies dans le panel */
+/* Titres et paragraphes dans les panneaux */
 .panel h2 {
     margin: 0 0 20px 0;
-    font-size: 1.1rem;
+    color: #000;                              /* texte noir */
 }
 .panel p {
     margin: 0 0 12px 0;
-    opacity: 0.9;
+    color: #222;                              /* gris foncé */
     font-size: .95rem;
 }
 
 /* Barres de progression */
 .progress {
     height: 10px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: #e6e6e6;
     border-radius: 999px;
     overflow: hidden;
     margin: 6px 0 10px;
+    border: 1px solid #d2d2d2;
 }
 .progress__bar {
     height: 100%;
     width: 0%;
-    background: #60a5fa;           /* bleu clair lisible sur #0f172a */
+    background: #007bff;                      /* bleu moyen */
     transition: width .3s ease;
 }
 .progress__label {
     margin: 2px 0 10px;
     font-size: .9rem;
-    opacity: .85;
+    color: #333;
     display: flex;
     justify-content: space-between;
 }

@@ -12,19 +12,21 @@
       <div class="panel">
         <h2>Avancement</h2>
 
-        <div class="progress" aria-label="Timeline" role="progressbar" :aria-valuenow="design" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress__bar" :style="{ width: design + '%' }"></div>
-        </div>
         <div class="progress__label">
           <span>Timeline</span><span>{{ design }}%</span>
         </div>
 
-        <div class="progress" aria-label="Avancée du jeu" role="progressbar" :aria-valuenow="dev" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress__bar" :style="{ width: dev + '%' }"></div>
+        <div class="progress" aria-label="Timeline" role="progressbar" :aria-valuenow="design" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress__bar" :style="{ width: design + '%' }"></div>
         </div>
+
         <div class="progress__label">
           <span>Avancée du jeu</span><span>{{ dev }}%</span>
         </div>
+        <div class="progress" aria-label="Avancée du jeu" role="progressbar" :aria-valuenow="dev" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress__bar" :style="{ width: dev + '%' }"></div>
+        </div>
+
       </div>
     </div>
   </section>
