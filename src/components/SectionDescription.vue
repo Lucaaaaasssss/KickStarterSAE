@@ -108,6 +108,25 @@
           <div v-show="openPanel === 4" class="panel-content">
             <div class="news-list">
 
+
+              <article class="news-card">
+                <div class="news-date">10 nov. 2025</div>
+                <h3 class="news-title">Assets de sol du jeu</h3>
+                <p class="news-text">
+                  Les assets de carreaux qui seront utilisés pour créer le sol de notre jeu viennent d’être dessinés en 32x32 pixels.                </p>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Carreaux de sol.</h4>
+                  <div class="assets-row">
+                    <img src="../assets/sol1.png" alt="Sol 1" />
+                    <img src="../assets/sol2.png" alt="Sol 2" />
+                    <img src="../assets/sol3.png" alt="Sol 3" />
+                    <img src="../assets/sol4.png" alt="Sol 4" />
+                  </div>
+                </div>
+
+              </article>
+
               <article class="news-card">
                 <div class="news-date">07 nov. 2025</div>
                 <h3 class="news-title">Assets d'un autre personnage</h3>
@@ -116,7 +135,7 @@
                 </p>
 
                 <div class="news-assets">
-                  <h4 class="assets-title">Policier patrouilleur</h4>
+                  <h4 class="assets-title">Deuxième cobaye jouable</h4>
                   <div class="assets-row">
                     <img src="../assets/cobaye2_front_1.png" alt="Cobaye face 1" />
                     <img src="../assets/cobaye2_front_2.png" alt="Cobaye face 2" />
