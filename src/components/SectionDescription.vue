@@ -111,6 +111,22 @@
 
               <article class="news-card">
                 <div class="news-date">12 nov. 2025</div>
+                <h3 class="news-title">Première démonstration vidéo de la mécanique de jeu qu'auront les patrouilleurs et les caméras de surveilance.</h3>
+                <p class="news-text">
+                  Cette première vidéo sert de croquis interactif pour illustrer les futurs déplacements des patrouilleurs ainsi que les zones de repérage des caméras de surveillance. 
+                  Les carrés bleus représentent les patrouilleurs, les rouges les caméras, les blancs les zones de détection, et les deux carrés verts correspondent au personnages jouables. 
+                  Elle permet de visualiser la logique de détection et les trajectoires prévues avant leur intégration dans le jeu.
+                </p>
+
+                <div class="asset-video">
+                  <video :src="videoMeca" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">12 nov. 2025</div>
                 <h3 class="news-title">Test du jeu sur borne d'arcade</h3>
                 <p class="news-text">
                   Test des déplacements avec des joysticks et des boutons similaires à ceux d'une borne d'arcade.</p>
@@ -240,6 +256,7 @@
 <script setup>
 import { ref } from 'vue'
 import videoTest from '../assets/videotest.mp4'
+import videoMeca from '../assets/demo_mecanique_jeu1.mp4'
 
 const openPanel = ref(null)
 const toggle = (id) => {
