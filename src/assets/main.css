@@ -105,3 +105,58 @@ h1, h2, h3, h4, h5, h6 {
         height: 260px;
     }
 }
+
+.countdown {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.countdown__title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.countdown__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+    gap: 10px;
+}
+
+.countdown__item {
+    text-align: center;
+    padding: 10px 8px;
+    border-radius: 8px;
+    background: rgba(52,152,219,0.08);   /* halo léger */
+    border: 1px solid rgba(52,152,219,0.18);
+}
+
+.countdown__value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #3498db; /* même bleu que la progress bar */
+}
+
+.countdown__label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #5f6b7a;
+    letter-spacing: 0.02em;
+}
+
+.countdown__done {
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.25);
+    color: #2ecc71;
+    font-weight: 600;
+}
+

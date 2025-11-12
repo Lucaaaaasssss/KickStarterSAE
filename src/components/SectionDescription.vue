@@ -209,7 +209,20 @@
               </article>
 
               <article class="news-card">
-                <div class="news-date">06 oct. 2025</div>
+                <div class="news-date">06 nov. 2025</div>
+                <h3 class="news-title">Moodboard</h3>
+                <p class="news-text">Création d’un moodboard afin de définir et poser l’ambiance visuelle et artistique du jeu vidéo.</p>
+
+                <div class="news-assets_bis">
+                  <div class="assets-row_bis">
+                    <img src="../assets/moodboard.jpg" alt="Moodboard" />
+                  </div>
+                </div>
+
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">06 nov. 2025</div>
                 <h3 class="news-title">Page de présentation prête</h3>
                 <p class="news-text">
                   La page Kickstarter est maintenant créée : description, visuels, planning, actualités et objectifs sont posés.
@@ -472,6 +485,7 @@ const toggle = (id) => {
   border: 1px solid #d2d2d2;
   background: #ffff;
   padding: 4px;
+  margin-top: 16px;
   image-rendering: pixelated;
 
 }
