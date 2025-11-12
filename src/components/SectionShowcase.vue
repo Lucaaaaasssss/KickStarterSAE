@@ -35,6 +35,6 @@
 <script setup>
 import { ref } from 'vue'
 
-const design = ref(10) // exemple
-const dev = ref(15)    // exemple
+const design = ref(40) // exemple
+const dev = ref(35)    // exemple
 </script>

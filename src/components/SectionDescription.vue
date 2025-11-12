@@ -110,6 +110,20 @@
 
 
               <article class="news-card">
+                <div class="news-date">12 nov. 2025</div>
+                <h3 class="news-title">Test du jeu sur borne d'arcade</h3>
+                <p class="news-text">
+                  Test des déplacements avec des joysticks et des boutons similaires à ceux d'une borne d'arcade.</p>
+
+                <div class="news-assets_bis">
+                  <div class="assets-row_bis">
+                    <img src="../assets/test_born1.jpeg" alt="Ecran pc test" />
+                  </div>
+                </div>
+
+              </article>
+
+              <article class="news-card">
                 <div class="news-date">10 nov. 2025</div>
                 <h3 class="news-title">Assets de sol du jeu</h3>
                 <p class="news-text">
@@ -430,10 +444,17 @@ const toggle = (id) => {
   gap: 6px;
   flex-wrap: wrap;
 }
+.assets-row_bis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+}
 
 .assets-row img {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 6px;
   border: 1px solid #d2d2d2;
   background: #fff;
@@ -441,6 +462,19 @@ const toggle = (id) => {
   image-rendering: pixelated;
 }
 
+
+.assets-row_bis img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  border-radius: 6px;
+  border: 1px solid #d2d2d2;
+  background: #ffff;
+  padding: 4px;
+  image-rendering: pixelated;
+
+}
 .asset-video {
   margin-top: 16px;
   display: flex;
