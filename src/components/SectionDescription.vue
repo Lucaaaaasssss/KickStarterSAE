@@ -532,4 +532,44 @@ const toggle = (id) => {
     justify-content: center;
   }
 }
+
+@media (max-width: 600px) {
+  .panel-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .team {
+    justify-content: center;
+  }
+
+  /* === ACTUS : images + vidéos plus petites sur mobile === */
+
+  /* Cartes un peu plus "compactes" */
+  .news-card {
+    padding: 8px 10px;
+  }
+
+  /* Ligne d’assets en grille compacte */
+  .assets-row {
+    justify-content: center;
+  }
+
+  .assets-row img {
+    width: 70px;      /* au lieu de 100px */
+    height: 70px;
+  }
+
+  /* Gros visuels (moodboard, borne…) */
+  .assets-row_bis img {
+    width: 100%;
+    max-width: 260px; /* pour éviter qu'ils soient énormes */
+    height: auto;
+  }
+
+  /* Vidéos */
+  .asset-video video {
+    width: 100%;
+    max-width: 320px;
+  }
+}
 </style>
