@@ -110,7 +110,33 @@
 
 
               <article class="news-card">
-                <div class="news-date">12 nov. 2025</div>
+                <div class="news-date">14 nov. 2025</div>
+                <h3 class="news-title">Assets des murs du jeu</h3>
+                <p class="news-text">
+                  Nous avons créé quatre assets pour les murs, chacun mesurant 32x32 pixels. Pour construire un mur complet, il faut superposer deux textures l’une au-dessus de l’autre. Deux des assets représentent des murs normaux, tandis que les deux autres comportent une fissure. Cette fissure servira plus tard dans le codage comme un passage secret ou interactif dans le jeu.
+                </p>
+                <div class="news-assets">
+                  <h4 class="assets-title">Assets du Mur</h4>
+                  <div class="assets-row">
+                    <img src="../assets/mur0.png" alt="Sol 1" />
+                    <img src="../assets/mur1.png" alt="Sol 2" />
+                    <img src="../assets/mur2.png" alt="Sol 3" />
+                    <img src="../assets/mur3.png" alt="Sol 4" />
+                  </div>
+                
+                </div>  
+                <div class="news-assets_bis">
+                  <h4 class="assets-title">Mur construit</h4>
+                  <div class="assets-row_bis">
+                    <img src="../assets/mur_exemple1.png" alt="Jeu avec le sol" />
+                  </div>
+                </div>
+                
+              </article> 
+                
+
+              <article class="news-card">
+                <div class="news-date">14 nov. 2025</div>
                 <h3 class="news-title">Mise à jour du jeu dans Unity</h3>
                 <p class="news-text">
                   Nous avons ajouté le sol dans Unity, la possibilité de quitter le jeu avec Esc et intégré un retour automatique au menu après 60 secondes d’inactivité.</p>
