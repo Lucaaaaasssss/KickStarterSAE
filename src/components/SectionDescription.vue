@@ -111,6 +111,20 @@
 
               <article class="news-card">
                 <div class="news-date">12 nov. 2025</div>
+                <h3 class="news-title">Mise à jour du jeu dans Unity</h3>
+                <p class="news-text">
+                  Nous avons ajouté le sol dans Unity, la possibilité de quitter le jeu avec Esc et intégré un retour automatique au menu après 60 secondes d’inactivité.</p>
+
+                <div class="news-assets_bis">
+                  <div class="assets-row_bis">
+                    <img src="../assets/jeugameplay2.png" alt="Jeu avec le sol" />
+                  </div>
+                </div>
+
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">12 nov. 2025</div>
                 <h3 class="news-title">Première démonstration vidéo de la mécanique de jeu qu'auront les patrouilleurs et les caméras de surveilance.</h3>
                 <p class="news-text">
                   Cette première vidéo sert de croquis interactif pour illustrer les futurs déplacements des patrouilleurs ainsi que les zones de repérage des caméras de surveillance. 
