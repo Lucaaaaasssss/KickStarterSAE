@@ -55,6 +55,8 @@
         </transition>
       </div>
 
+
+
       <!-- PANEL 3 - PLANNING (TIMELINE) -->
       <div class="panel-item">
         <header class="panel-header" @click="toggle(3)">
@@ -107,6 +109,22 @@
         <transition name="slide">
           <div v-show="openPanel === 4" class="panel-content">
             <div class="news-list">
+
+
+              <article class="news-card">
+                <div class="news-date">15 nov. 2025</div>
+                <h3 class="news-title">Une pause bien méritée</h3>
+                <p class="news-text">
+                  Après plusieurs heures de code, de tests et de brainstorming, rien de mieux qu'un moment de détente pour souffler un peu.<br>
+                  Sur cette photo, c'est nous — l'équipe derrière le jeu — qui trinquons à une belle avancée du projet.<br>
+                  Créer un jeu, c'est aussi ça : des nuits blanches, des lignes de code, mais surtout une aventure humaine faite de passion, de rires et de complicité.
+                </p>
+                <div class="news-assets_bis">
+                  <div class="assets-row_bis">
+                    <img src="../assets/soirée.jpeg" alt="Santé" />
+                  </div>
+                </div>
+              </article>
 
 
               <article class="news-card">
