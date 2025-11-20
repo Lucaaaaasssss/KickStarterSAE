@@ -110,19 +110,19 @@
           <div v-show="openPanel === 4" class="panel-content">
             <div class="news-list">
 
-
               <article class="news-card">
-                <div class="news-date">15 nov. 2025</div>
-                <h3 class="news-title">Une pause bien méritée</h3>
+                <div class="news-date">20 nov. 2025</div>
+                <h3 class="news-title">Développement de la mécanique de switch entre les 2 joueurs.</h3>
                 <p class="news-text">
-                  Après plusieurs heures de code, de tests et de brainstorming, rien de mieux qu'un moment de détente pour souffler un peu.<br>
-                  Sur cette photo, c'est nous — l'équipe derrière le jeu — qui trinquons à une belle avancée du projet.<br>
-                  Créer un jeu, c'est aussi ça : des nuits blanches, des lignes de code, mais surtout une aventure humaine faite de passion, de rires et de complicité.
+                  Cette nouvelle mécanique permet au joueur de changer de personnage à tout moment grâce à une simple touche.
+                  Elle offre une flexibilité totale dans la progression et constitue un élément central du gameplay en mode solo.
+                  Cette fonctionnalité permet également de mieux visualiser la complémentarité des parcours et renforce la dimension stratégique du jeu.
                 </p>
-                <div class="news-assets_bis">
-                  <div class="assets-row_bis">
-                    <img src="../assets/soirée.jpeg" alt="Santé" />
-                  </div>
+
+                <div class="asset-video">
+                  <video :src="video1120" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
                 </div>
               </article>
 
@@ -136,10 +136,8 @@
                 <div class="news-assets">
                   <h4 class="assets-title">Assets du Mur</h4>
                   <div class="assets-row">
-                    <img src="../assets/mur0.png" alt="Sol 1" />
                     <img src="../assets/mur1.png" alt="Sol 2" />
                     <img src="../assets/mur2.png" alt="Sol 3" />
-                    <img src="../assets/mur3.png" alt="Sol 4" />
                   </div>
                 
                 </div>  
@@ -315,6 +313,7 @@
 import { ref } from 'vue'
 import videoTest from '../assets/videotest.mp4'
 import videoMeca from '../assets/demo_mecanique_jeu1.mp4'
+import video1120 from '../assets/1120.mp4'
 
 const openPanel = ref(null)
 const toggle = (id) => {
