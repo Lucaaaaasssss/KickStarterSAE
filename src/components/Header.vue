@@ -23,8 +23,32 @@ const subtitle = ref('Découvrez les dernières actualités de RunAway, l\'avanc
 .site-header h1 {
   font-size: 3rem;
   font-weight: 800;
-
   margin: 0;
+  background: linear-gradient(
+    90deg,
+    #8b0000,
+    #ff0000,
+    #4a4a4a,
+    #1a1a1a,
+    #8b0000,
+    #ff0000
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(139, 0, 0, 0.4))
+          drop-shadow(0 0 10px rgba(255, 0, 0, 0.2));
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .subtitle {
