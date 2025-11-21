@@ -110,6 +110,30 @@
           <div v-show="openPanel === 4" class="panel-content">
             <div class="news-list">
 
+              
+              <article class="news-card">
+                <div class="news-date">21 nov. 2025</div>
+                <h3 class="news-title">Assets des portes du jeu</h3>
+                <p class="news-text">
+                  Les assets des portes de notre jeu viennent d'être déssiné en 32x32 pixel.                 </p>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Assets des portes</h4>
+                  <div class="assets-row">
+                    <img src="../assets/porte_d1.png" alt="Porte" />
+                    <img src="../assets/porte_d2.png" alt="Porte" />
+                    <img src="../assets/porte_g1.png" alt="Porte" />
+                    <img src="../assets/porte_g2.png" alt="Porte" />
+                  </div>
+                </div>
+                <div class="news-assets_bis">
+                  <h4 class="assets-title">Aperçu de la porte complète </h4>
+                  <div class="assets-row_bis">
+                    <img src="../assets/porte_full.jpg" alt="Potre" />
+                  </div>
+                </div>
+
+              </article>
 
               <article class="news-card">
                 <div class="news-date">20 nov. 2025</div>
@@ -120,15 +144,15 @@
                 <div class="news-assets">
                   <h4 class="assets-title">Assets du Mur</h4>
                   <div class="assets-row">
-                    <img src="../assets/mur1.png" alt="Sol 1" />
-                    <img src="../assets/mur2.png" alt="Sol 2" />
-                    <img src="../assets/mur3.png" alt="Sol 3" />
-                    <img src="../assets/mur4.png" alt="Sol 4" />
-                    <img src="../assets/mur5.png" alt="Sol 5" />
-                    <img src="../assets/mur6.png" alt="Sol 6" />
-                    <img src="../assets/mur7.png" alt="Sol 7" />
-                    <img src="../assets/mur8.png" alt="Sol 8" />
-                    <img src="../assets/mur9.png" alt="Sol 9" />
+                    <img src="../assets/mur1.png" alt="Mur" />
+                    <img src="../assets/mur2.png" alt="Mur" />
+                    <img src="../assets/mur3.png" alt="Mur" />
+                    <img src="../assets/mur4.png" alt="Mur" />
+                    <img src="../assets/mur5.png" alt="Mur" />
+                    <img src="../assets/mur6.png" alt="Mur" />
+                    <img src="../assets/mur7.png" alt="Mur" />
+                    <img src="../assets/mur8.png" alt="Mur" />
+                    <img src="../assets/mur9.png" alt="Mur" />
                   </div>
                 
                 </div>  
@@ -140,8 +164,6 @@
                 </div>
                 
               </article> 
-
-
 
               <article class="news-card">
                 <div class="news-date">20 nov. 2025</div>
@@ -169,8 +191,8 @@
                 <div class="news-assets">
                   <h4 class="assets-title">Assets du Mur</h4>
                   <div class="assets-row">
-                    <img src="../assets/mur1.png" alt="Sol 2" />
-                    <img src="../assets/mur2.png" alt="Sol 3" />
+                    <img src="../assets/mur1.png" alt="Mur" />
+                    <img src="../assets/mur2.png" alt="Mur" />
                   </div>
                 
                 </div>  
