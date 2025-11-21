@@ -153,6 +153,13 @@
                     <img src="../assets/mur7.png" alt="Mur" />
                     <img src="../assets/mur8.png" alt="Mur" />
                     <img src="../assets/mur9.png" alt="Mur" />
+                    <img src="../assets/mur10.png" alt="Mur" />
+                    <img src="../assets/mur11.png" alt="Mur" />
+                    <img src="../assets/mur12.png" alt="Mur" />
+                    <img src="../assets/mur13.png" alt="Mur" />
+                    <img src="../assets/mur14.png" alt="Mur" />
+                    <img src="../assets/mur15.png" alt="Mur" />
+                    <img src="../assets/mur16.png" alt="Mur" />
                   </div>
                 
                 </div>  
@@ -175,7 +182,7 @@
                 </p>
 
                 <div class="asset-video">
-                  <video :src="video1120" controls muted width="220">
+                  <video :src="videoswitch" controls muted width="220">
                     Ton navigateur ne supporte pas la lecture vidéo.
                   </video>
                 </div>
@@ -368,7 +375,7 @@
 import { ref } from 'vue'
 import videoTest from '../assets/videotest.mp4'
 import videoMeca from '../assets/demo_mecanique_jeu1.mp4'
-import video1120 from '../assets/1120.mp4'
+import videoswitch from '../assets/switch.mp4'
 
 const openPanel = ref(null)
 const toggle = (id) => {

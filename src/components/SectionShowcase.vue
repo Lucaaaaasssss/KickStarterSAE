@@ -1,24 +1,45 @@
 <template>
   <section class="section">
     <div class="container showcase-container">
-      <!-- 2/3 : image principale -->
+      <!-- 2/3 : image ou vidéo principale -->
       <img
+          v-if="currentImage.type === 'image'"
           class="showcase-img"
           :src="currentImage.src"
           :alt="currentImage.alt"
       />
+      <video
+          v-else
+          class="showcase-img"
+          :src="currentImage.src"
+          controls
+          muted
+          autoplay
+          loop
+      >
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
 
       <!-- Miniatures sur toute la largeur -->
       <div class="gallery-thumbnails">
-        <img
+        <div
             v-for="(image, index) in images"
             :key="index"
-            :src="image.src"
-            :alt="image.alt"
-            class="thumbnail"
+            class="thumbnail-wrapper"
             :class="{ active: currentImage.src === image.src }"
             @click="selectImage(image)"
-        />
+        >
+          <img
+              v-if="image.type === 'image'"
+              :src="image.src"
+              :alt="image.alt"
+              class="thumbnail"
+          />
+          <div v-else class="thumbnail video-thumbnail">
+            <video :src="image.src" class="thumbnail-video" muted></video>
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
       </div>
 
       <!-- 1/3 : petit rectangle avec 2 barres -->
@@ -90,16 +111,24 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import videoswitch from '../assets/switch.mp4'
 
-// Galerie d'images (images fictives pour le moment)
+// Galerie d'images et vidéos
 const images = ref([
   {
-    src: new URL('../assets/jeugameplay1.png', import.meta.url).href,
-    alt: 'Gameplay du jeu'
+    type: 'video',
+    src: videoswitch,
+    alt: 'Vidéo du switch entre joueurs'
   },
   {
+    type: 'image',
     src: new URL('../assets/jeugameplay2.png', import.meta.url).href,
     alt: 'Gameplay du jeu 2'
+  },
+  {
+    type: 'image',
+    src: new URL('../assets/jeugameplay1.png', import.meta.url).href,
+    alt: 'Gameplay du jeu'
   },
 ])
 
@@ -183,26 +212,61 @@ onBeforeUnmount(() => {
   justify-content: flex-start;
 }
 
-.thumbnail {
+.thumbnail-wrapper {
   width: 140px;
   height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
   cursor: pointer;
+  border-radius: 8px;
   border: 3px solid transparent;
   transition: all 0.3s ease;
   opacity: 0.7;
+  overflow: hidden;
 }
 
-.thumbnail:hover {
+.thumbnail-wrapper:hover {
   opacity: 1;
   transform: scale(1.05);
 }
 
-.thumbnail.active {
+.thumbnail-wrapper.active {
   border-color: #007bff;
   opacity: 1;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.thumbnail-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
 }
 
 /* Mode mobile : réorganiser l'ordre des éléments */
