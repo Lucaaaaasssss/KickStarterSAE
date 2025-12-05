@@ -112,6 +112,22 @@
 
               
               <article class="news-card">
+                <div class="news-date">04 déc. 2025</div>
+                <h3 class="news-title">Mise en place de la zone de repérage des patrouilleurs</h3>
+                <p class="news-text">
+                  Nous avons codé la zone de repérage des patrouilleurs, matérialisée par un halo de lumière. 
+                  Lorsqu’un des deux cobayes entre dans cette zone, il est immédiatement détecté et la partie est perdue. 
+                  Il est alors possible de relancer une nouvelle tentative d’un simple clic, afin de retester les déplacements et les réactions du système.
+                </p>
+
+                <div class="asset-video">
+                  <video :src="testpolicier" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                </div>
+              </article>
+
+              <article class="news-card">
                 <div class="news-date">21 nov. 2025</div>
                 <h3 class="news-title">Assets des portes du jeu</h3>
                 <p class="news-text">
@@ -376,6 +392,7 @@ import { ref } from 'vue'
 import videoTest from '../assets/videotest.mp4'
 import videoMeca from '../assets/demo_mecanique_jeu1.mp4'
 import videoswitch from '../assets/switch.mp4'
+import testpolicier from '../assets/testpolicier.mp4'
 
 const openPanel = ref(null)
 const toggle = (id) => {
