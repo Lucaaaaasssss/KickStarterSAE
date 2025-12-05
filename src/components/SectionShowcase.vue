@@ -112,9 +112,15 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import videoswitch from '../assets/switch.mp4'
+import testpolicier from '../assets/testpolicier.mp4'
 
 // Galerie d'images et vidéos
 const images = ref([
+  {
+    type: 'video',
+    src: testpolicier,
+    alt: 'Zone de repérage des patrouilleurs'
+  },
   {
     type: 'video',
     src: videoswitch,
@@ -138,9 +144,12 @@ function selectImage(image) {
   currentImage.value = image
 }
 
-const design = ref(25) // exemple
-const dev = ref(30)    // exemple
+// Progression automatique basée sur le temps
+const design = ref(0) // calculé automatiquement
+const dev = ref(30)    // progression manuelle du développement
 
+// Date de début du projet (06 novembre 2025)
+const startDate = new Date('2025-11-06T00:00:00+01:00')
 // Cible : 28 janvier 2026 à 00:00:00 (Europe/Paris, UTC+1 en janvier)
 const target = new Date('2026-01-28T00:00:00+01:00')
 
@@ -159,11 +168,18 @@ function updateCountdown () {
   if (diff <= 0) {
     isOver.value = true
     days.value = hours.value = minutes.value = seconds.value = 0
+    design.value = 100
     clearInterval(timerId)
     return
   }
 
   isOver.value = false
+
+  // Calcul de la progression de la timeline (de la date de début à la deadline)
+  const totalDuration = target.getTime() - startDate.getTime()
+  const elapsed = now.getTime() - startDate.getTime()
+  const progress = Math.min(100, Math.max(0, (elapsed / totalDuration) * 100))
+  design.value = Math.round(progress)
 
   const sec = Math.floor(diff / 1000)
   days.value    = Math.floor(sec / 86400)

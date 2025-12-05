@@ -117,7 +117,7 @@
                 <p class="news-text">
                   Nous avons codé la zone de repérage des patrouilleurs, matérialisée par un halo de lumière. 
                   Lorsqu’un des deux cobayes entre dans cette zone, il est immédiatement détecté et la partie est perdue. 
-                  Il est alors possible de relancer une nouvelle tentative d’un simple clic, afin de retester les déplacements et les réactions du système.
+                  Il est aussi possible de relancer une nouvelle tentative d’un simple clic après avoir perdu.
                 </p>
 
                 <div class="asset-video">
