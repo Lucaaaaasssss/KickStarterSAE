@@ -10,15 +10,21 @@
         <transition name="slide">
           <div v-show="openPanel === 1" class="panel-content">
             <p>
-              RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux cobayes tentant de s’évader d’un laboratoire sécurisé le plus rapidement possible !
-              Le concept central repose sur deux couloirs parallèles : avancer dans l’un permet de débloquer l’autre.<br /><br />
+              RunAway est un jeu d’arcade 2D dans lequel le joueur incarne deux
+              cobayes tentant de s’évader d’un laboratoire sécurisé le plus
+              rapidement possible ! Le concept central repose sur deux couloirs
+              parallèles : avancer dans l’un permet de débloquer l’autre.<br /><br />
               Le jeu propose deux façons de jouer :<br /><br />
-              <b>Solo :</b> le joueur contrôle les deux personnages et peut alterner à tout moment entre eux afin de progresser.<br />
-              <b>Duo :</b> chaque joueur contrôle un personnage, nécessitant une coordination constante.<br /><br />
-              Le laboratoire est équipé de systèmes de sécurité variés : caméras, gardes, robots patrouilleurs, etc.
-              La détection entraîne un redémarrage immédiat, encourageant l’apprentissage et l’amélioration du parcours.<br /><br />
-              La visibilité est volontairement réduite à une petite zone autour du personnage. Une lampe permet d’augmenter le champ de vision mais dispose d’une batterie limitée.<br /><br />
-              Le niveau comporte plusieurs itinéraires, dont certains cachés, offrant une rejouabilité et un potentiel d’optimisation du temps.
+              <b>Solo :</b> le joueur contrôle les deux personnages et peut
+              alterner à tout moment entre eux afin de progresser.<br />
+              <b>Duo :</b> chaque joueur contrôle un personnage, nécessitant une
+              coordination constante.<br /><br />
+              Le laboratoire est équipé de systèmes de sécurité variés :
+              caméras, gardes, etc. La détection entraîne un redémarrage
+              immédiat, encourageant l’apprentissage et l’amélioration du
+              parcours.<br /><br />
+              Le niveau comporte plusieurs itinéraires, dont certains cachés,
+              offrant une rejouabilité et un potentiel d’optimisation du temps.
             </p>
           </div>
         </transition>
@@ -55,8 +61,6 @@
         </transition>
       </div>
 
-
-
       <!-- PANEL 3 - PLANNING (TIMELINE) -->
       <div class="panel-item">
         <header class="panel-header" @click="toggle(3)">
@@ -69,20 +73,13 @@
               <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-body">
-                  <div class="timeline-period">Nov–Déc 2025</div>
-                  <div class="timeline-title">Kickstarter</div>
-                  <div class="timeline-desc">Page Kickstarter, trailer, collecte des premiers retours.</div>
-                  <div class="timeline-tag">En cours</div>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-body">
-                  <div class="timeline-period">Nov–Déc 2025</div>
-                  <div class="timeline-title">Développement du jeu</div>
-                  <div class="timeline-desc">Développement sur Unity, intégration, tests et itérations.</div>
-                  <div class="timeline-tag">En cours</div>
+                  <div class="timeline-period">Oct 2025</div>
+                  <div class="timeline-title">Conception & Idéation</div>
+                  <div class="timeline-desc">
+                    Brainstorming, définition du concept et des mécaniques
+                    principales.
+                  </div>
+                  <div class="timeline-tag done">Terminé</div>
                 </div>
               </div>
 
@@ -91,7 +88,49 @@
                 <div class="timeline-body">
                   <div class="timeline-period">Nov 2025</div>
                   <div class="timeline-title">Création des assets</div>
-                  <div class="timeline-desc">Production des sprites, animations et éléments visuels clés.</div>
+                  <div class="timeline-desc">
+                    Production des sprites, animations et éléments visuels clés
+                    sur Piskel.
+                  </div>
+                  <div class="timeline-tag done">Terminé</div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">Déc 2025</div>
+                  <div class="timeline-title">Développement du prototype</div>
+                  <div class="timeline-desc">
+                    Première version jouable, mécanique de switch et mouvements
+                    de base.
+                  </div>
+                  <div class="timeline-tag done">Terminé</div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">Jan 2026</div>
+                  <div class="timeline-title">Développement avancé</div>
+                  <div class="timeline-desc">
+                    Intégration de la map, ennemis (policiers, caméras), mode 2
+                    joueurs et API.
+                  </div>
+                  <div class="timeline-tag done">Terminé</div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-body">
+                  <div class="timeline-period">27 Jan 2026</div>
+                  <div class="timeline-title">Soutenance du jeu</div>
+                  <div class="timeline-desc">
+                    Présentation finale du projet et démonstration sur borne
+                    d'arcade.
+                  </div>
                   <div class="timeline-tag">En cours</div>
                 </div>
               </div>
@@ -109,15 +148,168 @@
         <transition name="slide">
           <div v-show="openPanel === 4" class="panel-content">
             <div class="news-list">
+              <article class="news-card">
+                <div class="news-date">26 janv. 2026</div>
+                <h3 class="news-title">Mode deux joueurs et Juice</h3>
+                <p class="news-text">
+                  Nous avons créé un mode pour deux joueurs avec écran scindé,
+                  permettant une collaboration (ou une compétition !) plus
+                  intense. De plus, nous avons ajouté beaucoup de "juice" au jeu
+                  : des sons, des musiques d'ambiance et des overlays soignés
+                  pour le lancement du jeu, rendant l'expérience beaucoup plus
+                  immersive.
+                </p>
 
-              
+                <div class="asset-video">
+                  <video :src="videoDuo" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">19 janv. 2026</div>
+                <h3 class="news-title">
+                  Connexion entre le site web et la borne d'arcade
+                </h3>
+                <p class="news-text">
+                  Un site web dédié (<a
+                    href="https://lucaslebecq.fr/sae501"
+                    target="_blank"
+                    >accessible ici</a
+                  >) a été créé pour relier directement le jeu sur la borne
+                  d'arcade grâce à une API. Cette intégration permet de modifier
+                  des paramètres du jeu en temps réel, comme la vitesse des
+                  policiers, ce qui permet d'ajuster la difficulté
+                  dynamiquement. De plus, un scoreboard a été mis en place sur
+                  le site pour afficher les meilleurs temps et suivre la
+                  compétition entre les joueurs.
+                </p>
+                <div class="news-assets">
+                  <h4 class="assets-title">Interface API et Scoreboard</h4>
+                  <div class="assets-row-large">
+                    <img
+                      src="../assets/maping/api1.png"
+                      alt="API Interface 1"
+                    />
+                    <img
+                      src="../assets/maping/api2.png"
+                      alt="API Interface 2"
+                    />
+                    <img
+                      src="../assets/maping/api3.png"
+                      alt="API Interface 3"
+                    />
+                  </div>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">10 janv. 2026</div>
+                <h3 class="news-title">
+                  Avancée majeure sur la map et les mécaniques
+                </h3>
+                <p class="news-text">
+                  Nous avons créé la map et intégré tous les assets. Le système
+                  de repérage des policiers a été revu et des caméras de
+                  surveillance ont été ajoutées : elles détectent les joueurs
+                  dès qu'ils entrent dans leur champ de vision. Pour contrer
+                  cela, nous avons mis en place des plaques de pression
+                  permettant de désactiver ces caméras. Enfin, nous avons changé
+                  la couleur des murs pour donner un aspect plus glauque,
+                  rappelant l'ambiance d'un hôpital abandonné.
+                </p>
+
+                <div class="asset-video">
+                  <video :src="videoRunAway" controls muted width="220">
+                    Ton navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-date">19 déc. 2025</div>
+                <h3 class="news-title">Création de nouveaux assets</h3>
+                <p class="news-text">
+                  Nous avons créé plein d'assets sur Piskel pour pouvoir
+                  réaliser la map par la suite.
+                </p>
+
+                <div class="news-assets">
+                  <h4 class="assets-title">Nouveaux assets divers</h4>
+                  <div class="assets-row">
+                    <img
+                      src="../assets/nouvelles_assets/armoir1.png"
+                      alt="Armoire"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/armoir2.png"
+                      alt="Armoire"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/chaise.png"
+                      alt="Chaise"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/evier.png"
+                      alt="Evier"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/Fauteuille_sang.png"
+                      alt="Fauteuil"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/Joconde_1.png"
+                      alt="Tableau"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/Joconde.png"
+                      alt="Tableau"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/lampeplafond.png"
+                      alt="Lampe"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/miroir.png"
+                      alt="Miroir"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/Plateau.png"
+                      alt="Plateau"
+                    />
+                    <img src="../assets/nouvelles_assets/pq.png" alt="PQ" />
+                    <img
+                      src="../assets/nouvelles_assets/robinet.png"
+                      alt="Robinet"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/solsallebain.png"
+                      alt="Sol"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/Tabouret.png"
+                      alt="Tabouret"
+                    />
+                    <img
+                      src="../assets/nouvelles_assets/toilette.png"
+                      alt="Toilette"
+                    />
+                  </div>
+                </div>
+              </article>
+
               <article class="news-card">
                 <div class="news-date">04 déc. 2025</div>
-                <h3 class="news-title">Mise en place de la zone de repérage des patrouilleurs</h3>
+                <h3 class="news-title">
+                  Mise en place de la zone de repérage des patrouilleurs
+                </h3>
                 <p class="news-text">
-                  Nous avons codé la zone de repérage des patrouilleurs, matérialisée par un halo de lumière. 
-                  Lorsqu’un des deux cobayes entre dans cette zone, il est immédiatement détecté et la partie est perdue. 
-                  Il est aussi possible de relancer une nouvelle tentative d’un simple clic après avoir perdu.
+                  Nous avons codé la zone de repérage des patrouilleurs,
+                  matérialisée par un halo de lumière. Lorsqu’un des deux
+                  cobayes entre dans cette zone, il est immédiatement détecté et
+                  la partie est perdue. Il est aussi possible de relancer une
+                  nouvelle tentative d’un simple clic après avoir perdu.
                 </p>
 
                 <div class="asset-video">
@@ -131,7 +323,9 @@
                 <div class="news-date">21 nov. 2025</div>
                 <h3 class="news-title">Assets des portes du jeu</h3>
                 <p class="news-text">
-                  Les assets des portes de notre jeu viennent d'être déssiné en 32x32 pixel.                 </p>
+                  Les assets des portes de notre jeu viennent d'être déssiné en
+                  32x32 pixel.
+                </p>
 
                 <div class="news-assets">
                   <h4 class="assets-title">Assets des portes</h4>
@@ -143,19 +337,19 @@
                   </div>
                 </div>
                 <div class="news-assets_bis">
-                  <h4 class="assets-title">Aperçu de la porte complète </h4>
+                  <h4 class="assets-title">Aperçu de la porte complète</h4>
                   <div class="assets-row_bis">
                     <img src="../assets/porte_full.jpg" alt="Potre" />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">20 nov. 2025</div>
                 <h3 class="news-title">Nouvelles Assets des murs du jeu</h3>
                 <p class="news-text">
-                  Nous avons créé des nouvelles assets pour finaliser les murs, chacun mesurant toujours 32x32 pixels.
+                  Nous avons créé des nouvelles assets pour finaliser les murs,
+                  chacun mesurant toujours 32x32 pixels.
                 </p>
                 <div class="news-assets">
                   <h4 class="assets-title">Assets du Mur</h4>
@@ -177,24 +371,30 @@
                     <img src="../assets/mur15.png" alt="Mur" />
                     <img src="../assets/mur16.png" alt="Mur" />
                   </div>
-                
-                </div>  
+                </div>
                 <div class="news-assets_bis">
                   <h4 class="assets-title">Mur construit</h4>
                   <div class="assets-row_bis">
-                    <img src="../assets/murcomplet2.png" alt="Jeu avec le sol" />
+                    <img
+                      src="../assets/murcomplet2.png"
+                      alt="Jeu avec le sol"
+                    />
                   </div>
                 </div>
-                
-              </article> 
+              </article>
 
               <article class="news-card">
                 <div class="news-date">20 nov. 2025</div>
-                <h3 class="news-title">Développement de la mécanique de switch entre les 2 joueurs.</h3>
+                <h3 class="news-title">
+                  Développement de la mécanique de switch entre les 2 joueurs.
+                </h3>
                 <p class="news-text">
-                  Cette nouvelle mécanique permet au joueur de changer de personnage à tout moment grâce à une simple touche.
-                  Elle offre une flexibilité totale dans la progression et constitue un élément central du gameplay en mode solo.
-                  Cette fonctionnalité permet également de mieux visualiser la complémentarité des parcours et renforce la dimension stratégique du jeu.
+                  Cette nouvelle mécanique permet au joueur de changer de
+                  personnage à tout moment grâce à une simple touche. Elle offre
+                  une flexibilité totale dans la progression et constitue un
+                  élément central du gameplay en mode solo. Cette fonctionnalité
+                  permet également de mieux visualiser la complémentarité des
+                  parcours et renforce la dimension stratégique du jeu.
                 </p>
 
                 <div class="asset-video">
@@ -204,12 +404,17 @@
                 </div>
               </article>
 
-
               <article class="news-card">
                 <div class="news-date">14 nov. 2025</div>
                 <h3 class="news-title">Assets des murs du jeu</h3>
                 <p class="news-text">
-                  Nous avons créé quatre assets pour les murs, chacun mesurant 32x32 pixels. Pour construire un mur complet, il faut superposer deux textures l’une au-dessus de l’autre. Deux des assets représentent des murs normaux, tandis que les deux autres comportent une fissure. Cette fissure servira plus tard dans le codage comme un passage secret ou interactif dans le jeu.
+                  Nous avons créé quatre assets pour les murs, chacun mesurant
+                  32x32 pixels. Pour construire un mur complet, il faut
+                  superposer deux textures l’une au-dessus de l’autre. Deux des
+                  assets représentent des murs normaux, tandis que les deux
+                  autres comportent une fissure. Cette fissure servira plus tard
+                  dans le codage comme un passage secret ou interactif dans le
+                  jeu.
                 </p>
                 <div class="news-assets">
                   <h4 class="assets-title">Assets du Mur</h4>
@@ -217,39 +422,52 @@
                     <img src="../assets/mur1.png" alt="Mur" />
                     <img src="../assets/mur2.png" alt="Mur" />
                   </div>
-                
-                </div>  
+                </div>
                 <div class="news-assets_bis">
                   <h4 class="assets-title">Mur construit</h4>
                   <div class="assets-row_bis">
-                    <img src="../assets/mur_exemple1.png" alt="Jeu avec le sol" />
+                    <img
+                      src="../assets/mur_exemple1.png"
+                      alt="Jeu avec le sol"
+                    />
                   </div>
                 </div>
-                
-              </article> 
-                
+              </article>
 
               <article class="news-card">
                 <div class="news-date">14 nov. 2025</div>
                 <h3 class="news-title">Mise à jour du jeu dans Unity</h3>
                 <p class="news-text">
-                  Nous avons ajouté le sol dans Unity, la possibilité de quitter le jeu avec Esc et intégré un retour automatique au menu après 60 secondes d’inactivité.</p>
+                  Nous avons ajouté le sol dans Unity, la possibilité de quitter
+                  le jeu avec Esc et intégré un retour automatique au menu après
+                  60 secondes d’inactivité.
+                </p>
 
                 <div class="news-assets_bis">
                   <div class="assets-row_bis">
-                    <img src="../assets/jeugameplay2.png" alt="Jeu avec le sol" />
+                    <img
+                      src="../assets/jeugameplay2.png"
+                      alt="Jeu avec le sol"
+                    />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">12 nov. 2025</div>
-                <h3 class="news-title">Première démonstration vidéo de la mécanique de jeu qu'auront les patrouilleurs et les caméras de surveilance.</h3>
+                <h3 class="news-title">
+                  Première démonstration vidéo de la mécanique de jeu qu'auront
+                  les patrouilleurs et les caméras de surveilance.
+                </h3>
                 <p class="news-text">
-                  Cette première vidéo sert de croquis interactif pour illustrer les futurs déplacements des patrouilleurs ainsi que les zones de repérage des caméras de surveillance. 
-                  Les carrés bleus représentent les patrouilleurs, les rouges les caméras, les blancs les zones de détection, et les deux carrés verts correspondent au personnages jouables. 
-                  Elle permet de visualiser la logique de détection et les trajectoires prévues avant leur intégration dans le jeu.
+                  Cette première vidéo sert de croquis interactif pour illustrer
+                  les futurs déplacements des patrouilleurs ainsi que les zones
+                  de repérage des caméras de surveillance. Les carrés bleus
+                  représentent les patrouilleurs, les rouges les caméras, les
+                  blancs les zones de détection, et les deux carrés verts
+                  correspondent au personnages jouables. Elle permet de
+                  visualiser la logique de détection et les trajectoires prévues
+                  avant leur intégration dans le jeu.
                 </p>
 
                 <div class="asset-video">
@@ -263,21 +481,24 @@
                 <div class="news-date">12 nov. 2025</div>
                 <h3 class="news-title">Test du jeu sur borne d'arcade</h3>
                 <p class="news-text">
-                  Test des déplacements avec des joysticks et des boutons similaires à ceux d'une borne d'arcade.</p>
+                  Test des déplacements avec des joysticks et des boutons
+                  similaires à ceux d'une borne d'arcade.
+                </p>
 
                 <div class="news-assets_bis">
                   <div class="assets-row_bis">
                     <img src="../assets/test_born1.jpeg" alt="Ecran pc test" />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">10 nov. 2025</div>
                 <h3 class="news-title">Assets de sol du jeu</h3>
                 <p class="news-text">
-                  Les assets de carreaux qui seront utilisés pour créer le sol de notre jeu viennent d’être dessinés en 32x32 pixels.                </p>
+                  Les assets de carreaux qui seront utilisés pour créer le sol
+                  de notre jeu viennent d’être dessinés en 32x32 pixels.
+                </p>
 
                 <div class="news-assets">
                   <h4 class="assets-title">Carreaux de sol.</h4>
@@ -288,35 +509,55 @@
                     <img src="../assets/sol4.png" alt="Sol 4" />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">07 nov. 2025</div>
                 <h3 class="news-title">Assets d'un autre personnage</h3>
                 <p class="news-text">
-                  Le personnage jouable est disponible en pixel-art 32x32, prêt à être intégré sur Unity.
+                  Le personnage jouable est disponible en pixel-art 32x32, prêt
+                  à être intégré sur Unity.
                 </p>
 
                 <div class="news-assets">
                   <h4 class="assets-title">Deuxième cobaye jouable</h4>
                   <div class="assets-row">
-                    <img src="../assets/cobaye2_front_1.png" alt="Cobaye face 1" />
-                    <img src="../assets/cobaye2_front_2.png" alt="Cobaye face 2" />
-                    <img src="../assets/cobaye2_back_1.png" alt="Cobaye dos 1" />
-                    <img src="../assets/cobaye2_back_2.png" alt="Cobaye dos 2" />
-                    <img src="../assets/cobaye2_side_1.png" alt="Cobaye côté 1" />
-                    <img src="../assets/cobaye2_side_2.png" alt="Cobaye côté 2" />
+                    <img
+                      src="../assets/cobaye2_front_1.png"
+                      alt="Cobaye face 1"
+                    />
+                    <img
+                      src="../assets/cobaye2_front_2.png"
+                      alt="Cobaye face 2"
+                    />
+                    <img
+                      src="../assets/cobaye2_back_1.png"
+                      alt="Cobaye dos 1"
+                    />
+                    <img
+                      src="../assets/cobaye2_back_2.png"
+                      alt="Cobaye dos 2"
+                    />
+                    <img
+                      src="../assets/cobaye2_side_1.png"
+                      alt="Cobaye côté 1"
+                    />
+                    <img
+                      src="../assets/cobaye2_side_2.png"
+                      alt="Cobaye côté 2"
+                    />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">07 nov. 2025</div>
-                <h3 class="news-title">Première démonstration vidéo du prototype</h3>
+                <h3 class="news-title">
+                  Première démonstration vidéo du prototype
+                </h3>
                 <p class="news-text">
-                  La première vidéo de test est disponible ! Le but était de tester les déplacements du personnage.
+                  La première vidéo de test est disponible ! Le but était de
+                  tester les déplacements du personnage.
                 </p>
                 <div class="asset-video">
                   <video :src="videoTest" controls muted width="220">
@@ -325,35 +566,72 @@
                 </div>
               </article>
 
-
               <article class="news-card">
                 <div class="news-date">06 nov. 2025</div>
                 <h3 class="news-title">Premiers assets de personnages</h3>
                 <p class="news-text">
-                  Les personnages jouables et les policiers patrouilleurs sont disponibles en pixel-art 32x32, prêts à être intégrés au prototype.
+                  Les personnages jouables et les policiers patrouilleurs sont
+                  disponibles en pixel-art 32x32, prêts à être intégrés au
+                  prototype.
                 </p>
 
                 <div class="news-assets">
                   <h4 class="assets-title">Policier patrouilleur</h4>
                   <div class="assets-row">
-                    <img src="../assets/policier_front_1.png" alt="Policier face 1" />
-                    <img src="../assets/policier_front_2.png" alt="Policier face 2" />
-                    <img src="../assets/policier_back_1.png" alt="Policier dos 1" />
-                    <img src="../assets/policier_back_2.png" alt="Policier dos 2" />
-                    <img src="../assets/policier_side_1.png" alt="Policier côté 1" />
-                    <img src="../assets/policier_side_2.png" alt="Policier côté 2" />
+                    <img
+                      src="../assets/policier_front_1.png"
+                      alt="Policier face 1"
+                    />
+                    <img
+                      src="../assets/policier_front_2.png"
+                      alt="Policier face 2"
+                    />
+                    <img
+                      src="../assets/policier_back_1.png"
+                      alt="Policier dos 1"
+                    />
+                    <img
+                      src="../assets/policier_back_2.png"
+                      alt="Policier dos 2"
+                    />
+                    <img
+                      src="../assets/policier_side_1.png"
+                      alt="Policier côté 1"
+                    />
+                    <img
+                      src="../assets/policier_side_2.png"
+                      alt="Policier côté 2"
+                    />
                   </div>
                 </div>
 
                 <div class="news-assets">
                   <h4 class="assets-title">Cobaye 1</h4>
                   <div class="assets-row">
-                    <img src="../assets/cobaye1_front_1.png" alt="Cobaye face 1" />
-                    <img src="../assets/cobaye1_front_2.png" alt="Cobaye face 2" />
-                    <img src="../assets/cobaye1_back_1.png" alt="Cobaye dos 1" />
-                    <img src="../assets/cobaye1_back_2.png" alt="Cobaye dos 2" />
-                    <img src="../assets/cobaye1_side_1.png" alt="Cobaye côté 1" />
-                    <img src="../assets/cobaye1_side_2.png" alt="Cobaye côté 2" />
+                    <img
+                      src="../assets/cobaye1_front_1.png"
+                      alt="Cobaye face 1"
+                    />
+                    <img
+                      src="../assets/cobaye1_front_2.png"
+                      alt="Cobaye face 2"
+                    />
+                    <img
+                      src="../assets/cobaye1_back_1.png"
+                      alt="Cobaye dos 1"
+                    />
+                    <img
+                      src="../assets/cobaye1_back_2.png"
+                      alt="Cobaye dos 2"
+                    />
+                    <img
+                      src="../assets/cobaye1_side_1.png"
+                      alt="Cobaye côté 1"
+                    />
+                    <img
+                      src="../assets/cobaye1_side_2.png"
+                      alt="Cobaye côté 2"
+                    />
                   </div>
                 </div>
               </article>
@@ -361,24 +639,26 @@
               <article class="news-card">
                 <div class="news-date">06 nov. 2025</div>
                 <h3 class="news-title">Moodboard</h3>
-                <p class="news-text">Création d’un moodboard afin de définir et poser l’ambiance visuelle et artistique du jeu vidéo.</p>
+                <p class="news-text">
+                  Création d’un moodboard afin de définir et poser l’ambiance
+                  visuelle et artistique du jeu vidéo.
+                </p>
 
                 <div class="news-assets_bis">
                   <div class="assets-row_bis">
                     <img src="../assets/moodboard.jpg" alt="Moodboard" />
                   </div>
                 </div>
-
               </article>
 
               <article class="news-card">
                 <div class="news-date">06 nov. 2025</div>
                 <h3 class="news-title">Page de présentation prête</h3>
                 <p class="news-text">
-                  La page Kickstarter est maintenant créée : description, visuels, planning, actualités et objectifs sont posés.
+                  La page Kickstarter est maintenant créée : description,
+                  visuels, planning, actualités et objectifs sont posés.
                 </p>
               </article>
-
             </div>
           </div>
         </transition>
@@ -388,16 +668,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import videoTest from '../assets/videotest.mp4'
-import videoMeca from '../assets/demo_mecanique_jeu1.mp4'
-import videoswitch from '../assets/switch.mp4'
-import testpolicier from '../assets/testpolicier.mp4'
+import { ref } from "vue";
+import videoTest from "../assets/videotest.mp4";
+import videoMeca from "../assets/demo_mecanique_jeu1.mp4";
+import videoswitch from "../assets/switch.mp4";
+import testpolicier from "../assets/testpolicier.mp4";
+import videoRunAway from "../assets/maping/RUNAWAY.mp4";
+import videoDuo from "../assets/maping/Duo.mp4";
 
-const openPanel = ref(null)
+const openPanel = ref(null);
 const toggle = (id) => {
-  openPanel.value = openPanel.value === id ? null : id
-}
+  openPanel.value = openPanel.value === id ? null : id;
+};
 </script>
 
 <style scoped>
@@ -561,6 +843,12 @@ const toggle = (id) => {
   letter-spacing: 0.06em;
 }
 
+.timeline-tag.done {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
 /* === DERNIÈRES ACTUS (CARDS) === */
 .news-list {
   display: grid;
@@ -595,6 +883,11 @@ const toggle = (id) => {
   opacity: 0.9;
 }
 
+.news-text a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
 .news-assets {
   margin-top: 10px;
 }
@@ -615,7 +908,6 @@ const toggle = (id) => {
   justify-content: center;
   align-items: center;
   gap: 6px;
-
 }
 
 .assets-row img {
@@ -628,7 +920,6 @@ const toggle = (id) => {
   image-rendering: pixelated;
 }
 
-
 .assets-row_bis img {
   display: flex;
   justify-content: center;
@@ -640,8 +931,24 @@ const toggle = (id) => {
   padding: 4px;
   margin-top: 16px;
   image-rendering: pixelated;
-
 }
+
+.assets-row-large {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.assets-row-large img {
+  width: 400px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #d2d2d2;
+  background: #fff;
+  padding: 4px;
+  image-rendering: pixelated;
+}
+
 .asset-video {
   margin-top: 16px;
   display: flex;
@@ -650,14 +957,13 @@ const toggle = (id) => {
 }
 
 .asset-video video {
-  width: 80%;          /* vidéo plus grande mais pas pleine largeur */
-  max-width: 700px;    /* limite sur les écrans larges */
+  width: 80%; /* vidéo plus grande mais pas pleine largeur */
+  max-width: 700px; /* limite sur les écrans larges */
   border-radius: 12px;
   border: 2px solid #ccc;
   background: #000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
-
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -691,7 +997,7 @@ const toggle = (id) => {
   }
 
   .assets-row img {
-    width: 70px;      /* au lieu de 100px */
+    width: 70px; /* au lieu de 100px */
     height: 70px;
   }
 

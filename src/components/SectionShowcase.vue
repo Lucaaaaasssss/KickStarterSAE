@@ -113,9 +113,21 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import videoswitch from '../assets/switch.mp4'
 import testpolicier from '../assets/testpolicier.mp4'
+import videoRunAway from '../assets/maping/RUNAWAY.mp4'
+import videoDuo from '../assets/maping/Duo.mp4'
 
 // Galerie d'images et vidéos
 const images = ref([
+  {
+    type: 'video',
+    src: videoDuo,
+    alt: 'Mode Duo'
+  },
+  {
+    type: 'video',
+    src: videoRunAway,
+    alt: 'Gameplay RunAway'
+  },
   {
     type: 'video',
     src: testpolicier,
@@ -146,7 +158,7 @@ function selectImage(image) {
 
 // Progression automatique basée sur le temps
 const design = ref(0) // calculé automatiquement
-const dev = ref(30)    // progression manuelle du développement
+const dev = ref(99)    // progression manuelle du développement
 
 // Date de début du projet (06 novembre 2025)
 const startDate = new Date('2025-11-06T00:00:00+01:00')
